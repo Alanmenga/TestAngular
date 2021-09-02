@@ -2,21 +2,18 @@
 <hr>
 
 <table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Accion</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>asdasdasd</td>
-            <td>asdasdasd</td>
-        </tr>
-        
-
-    </tbody>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts">
+      <th scope="row"> {{ post.id }} </th>
+      <td> {{ post.title }} </td>
+      <td><button type="button" class="btn btn-secondary">Mas</button></td>
+    </tr>
+  </tbody>
 </table>
