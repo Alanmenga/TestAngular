@@ -10,10 +10,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let post of posts">
-      <th scope="row"> {{ post.id }} </th>
+    <tr *ngFor="let post of posts; let i = index">
+      <th scope="row"> {{ post.id  }} </th>
       <td> {{ post.title }} </td>
-      <td><button type="button" class="btn btn-secondary">Mas</button></td>
+      <td>
+          <button (click)="verPost(i)" type="button" class="btn btn-secondary">Mas</button>
+          <!-- <a [routerLink]="['/post',i]" class="btn btn-secondary">Mas</a> -->
+      </td>
     </tr>
   </tbody>
 </table>
