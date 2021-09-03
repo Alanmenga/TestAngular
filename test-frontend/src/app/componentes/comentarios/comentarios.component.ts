@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Comment } from 'src/app/interfaces/cooment.interfaces';
 import { CommentService } from "src/app/servicios/comment.service";
 import { ActivatedRoute } from "@angular/router";
@@ -15,10 +15,12 @@ export class ComentariosComponent implements OnInit {
   public id!: number;
   public commentsFilt : Comment [] = [];
 
+  @Output() cambiarFecha:EventEmitter<void>;
+
   constructor( private activatedRoute:ActivatedRoute, private commentService:CommentService) { 
+    this.cambiarFecha = new EventEmitter();
     this.activatedRoute.params.subscribe( params => {
       this.id = params['id'] ;
-      console.log("estoy en comentarios components y este es el id:",this.id);
     })
   }
 
@@ -27,7 +29,7 @@ export class ComentariosComponent implements OnInit {
   }
 
   emitir(){
-
+    this.cambiarFecha.emit()
   }
 
 
@@ -36,7 +38,7 @@ export class ComentariosComponent implements OnInit {
         .subscribe( respuesta => {
           this.comments = respuesta;
           this.commentsFilt = this.comments.filter( c => c.postId == this.id)
-          console.log(this.commentsFilt);
+          //console.log(this.commentsFilt);
         })
   }
 }
