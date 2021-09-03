@@ -10,16 +10,17 @@ import { Observable } from 'rxjs';
 
 export class PostService {
 
-  private url: string = 'https://jsonplaceholder.typicode.com/posts/';
+  private urlPost: string = 'https://jsonplaceholder.typicode.com/posts/';
+
 
   constructor( private http: HttpClient) { }
 
   getAllPosts():Observable<PostResponse[]>{
-    return this.http.get<PostResponse[]>(this.url);
+    return this.http.get<PostResponse[]>(this.urlPost);
   }
 
   getPost( postId:string ):Observable<PostResponse>{
-    return this.http.get<PostResponse>(this.url + postId);
+    return this.http.get<PostResponse>(this.urlPost + postId);
   }
 
 }

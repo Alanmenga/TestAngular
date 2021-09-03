@@ -11,6 +11,7 @@ import { PostService } from 'src/app/servicios/post.service';
 })
 export class PostComponent implements OnInit {
 
+  public fecha!: Date;
   public id!: string;
   public post! : PostResponse ;
 
@@ -34,6 +35,10 @@ export class PostComponent implements OnInit {
 
   volver( ){
     this.router.navigate( ['/posts'] );
+  }
+
+  emitir(){
+    this.fecha = new Date();
   }
 
 }

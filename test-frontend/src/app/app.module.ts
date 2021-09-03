@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './componentes/compartido/navbar/navbar.component';
 import { PostsComponent } from './componentes/posts/posts.component';
 import { PostComponent } from './componentes/post/post.component';
+import { ComentariosComponent } from './componentes/comentarios/comentarios.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PostComponent } from './componentes/post/post.component';
     NavbarComponent,
     PostsComponent,
     PostComponent,
+    ComentariosComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+<p>comentarios works!</p>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">IdPost</th>
+        <th scope="col">IdCom</th>
+        <th scope="col">Name</th>
+        <th scope="col">Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comm of commentsFilt; let i = index">
+        <td> {{ comm.postId  }} </td>
+        <td> {{ comm.id }} </td>
+        <td> {{ comm.name }} </td>
+        <td> {{ comm.email}} </td>
+      </tr>
+    </tbody>
+  </table>
+<!-- <button (click)="emitir()" type="button" class="btn btn-secondary">Emitir</button> -->
